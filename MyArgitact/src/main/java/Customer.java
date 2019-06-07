@@ -24,10 +24,9 @@ class Customer {
     Iterator<Rental> rentals = _rentals.iterator();
     String result = "Rental Record for " + getName() + "\n";
     while (rentals.hasNext()) {
-      double thisAmount = 0;
       Rental each = rentals.next();
+      double thisAmount = culcAmount(each);
 
-      thisAmount = culcAmount(each);
       frequentRenterPoints = culcFrequentRenterPoints(each);
 
       //この貸し出しに関する数値の表示
